@@ -9,9 +9,9 @@ use std::net::SocketAddr;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 
-use futures::channel::mpsc::{TrySendError, UnboundedSender};
-use futures::channel::oneshot::{self, Receiver, Sender};
-use futures::{ready, Future, Stream};
+use futures_channel::mpsc::{TrySendError, UnboundedSender};
+use futures_channel::oneshot::{self, Receiver, Sender};
+use futures_util::{ready, future::Future, stream::Stream};
 use log::{debug, warn};
 
 use crate::error::*;

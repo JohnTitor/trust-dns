@@ -10,8 +10,8 @@ use std::net::{Ipv4Addr, SocketAddr};
 use std::pin::Pin;
 use std::task::{Context, Poll};
 
-use futures::stream::{StreamExt, TryStreamExt};
-use futures::{Future, FutureExt, Stream, TryFutureExt};
+use futures_util::stream::{StreamExt, TryStreamExt};
+use futures_util::{future::Future, FutureExt, stream::Stream, TryFutureExt};
 
 use crate::error::ProtoError;
 use crate::multicast::mdns_stream::{MDNS_IPV4, MDNS_IPV6};
