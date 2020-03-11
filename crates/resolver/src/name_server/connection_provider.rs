@@ -9,9 +9,9 @@ use std::marker::Unpin;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 
-use futures::io::{AsyncRead, AsyncWrite};
-use futures::ready;
-use futures::{Future, FutureExt};
+use futures_util::io::{AsyncRead, AsyncWrite};
+use futures_util::ready;
+use futures_util::{future::Future, FutureExt};
 #[cfg(feature = "tokio-runtime")]
 use tokio::net::TcpStream as TokioTcpStream;
 #[cfg(all(
@@ -237,7 +237,7 @@ where
             DnsMultiplexerConnect<
                 Pin<
                     Box<
-                        dyn futures::Future<
+                        dyn futures_util::future::Future<
                                 Output = Result<
                                     TcpClientStream<AsyncIo02As03<TokioTlsStream<TokioTcpStream>>>,
                                     ProtoError,

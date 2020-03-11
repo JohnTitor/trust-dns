@@ -88,7 +88,6 @@
 //! For more advanced asynchronous usage, the `AsyncResolver`] is integrated with Tokio. In fact, the [`AsyncResolver`] is used by the synchronous Resolver for all lookups.
 //!
 //! ```rust
-//! # extern crate futures;
 //! # extern crate tokio;
 //! # extern crate trust_dns_resolver;
 //! # fn main() {
@@ -194,7 +193,6 @@
 #[cfg(feature = "dns-over-tls")]
 #[macro_use]
 extern crate cfg_if;
-extern crate futures;
 #[cfg(target_os = "windows")]
 extern crate ipconfig;
 #[macro_use]

@@ -11,7 +11,7 @@ use std::pin::Pin;
 use std::sync::Arc;
 use std::time::Instant;
 
-use futures::Future;
+use futures_util::future::Future;
 #[cfg(feature = "tokio-runtime")]
 use tokio::runtime::Handle;
 
@@ -240,7 +240,7 @@ mod tests {
     use std::net::{IpAddr, Ipv4Addr, SocketAddr};
     use std::time::Duration;
 
-    use futures::{future, FutureExt};
+    use futures_util::{future, FutureExt};
     use tokio::runtime::Runtime;
 
     use proto::op::{Query, ResponseCode};
